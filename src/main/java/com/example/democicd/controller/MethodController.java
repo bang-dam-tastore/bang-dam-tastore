@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class MethodController {
   @GetMapping
   public ResponseEntity<?> imports() {
-    return ResponseEntity.ok("haha");
+    return ResponseEntity.ok("haha1");
   }
 }

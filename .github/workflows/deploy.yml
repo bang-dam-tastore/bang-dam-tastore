@@ -54,7 +54,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             echo ${{ secrets.GHCR_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-            docker pull ghcr.io/${{ github.repository_owner }}/ggm-be:${{ github.sha }}
+            docker pull ghcr.io/${{ github.repository_owner }}/bang-dam-tastore:${{ github.sha }}
             docker network inspect ta-net >/dev/null 2>&1 || docker network create ta-net
             docker stop democide-api || true
             docker rm democide-api || true

@@ -56,6 +56,6 @@ jobs:
             echo ${{ secrets.GHCR_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
             docker pull ghcr.io/${{ github.repository_owner }}/ggm-be:${{ github.sha }}
             docker network inspect ta-net >/dev/null 2>&1 || docker network create ta-net
-            docker stop ggm-api || true
-            docker rm ggm-api || true
-            docker run -d --restart=always --pull=always --name ggm-api --network ta-net -p 8081:8081 ghcr.io/${{ github.repository_owner }}/ggm-be:${{ github.sha }}
+            docker stop democide-api || true
+            docker rm democide-api || true
+            docker run -d --restart=always --pull=always --name democide-api --network ta-net -p 8081:8081 ghcr.io/${{ github.repository_owner }}/ggm-be:${{ github.sha }}

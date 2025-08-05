@@ -58,4 +58,4 @@ jobs:
             docker network inspect ta-net >/dev/null 2>&1 || docker network create ta-net
             docker stop ggm-api || true
             docker rm ggm-api || true
-            docker run -d --restart=always --pull=always --name ggm-api --network ta-net -p 8080:8080 ghcr.io/${{ github.repository_owner }}/ggm-be:${{ github.sha }}
+            docker run -d --restart=always --pull=always --name ggm-api --network ta-net -p 8081:8081 ghcr.io/${{ github.repository_owner }}/ggm-be:${{ github.sha }}
